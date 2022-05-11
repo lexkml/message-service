@@ -1,0 +1,19 @@
+server:
+  port: 8083
+spring:
+  datasource:
+    username: Alex
+    password: Alex
+    url: jdbc:postgresql://localhost:5434/auto?currentSchema=message-broker
+  main:
+    allow-circular-references: true
+  flyway:
+    baseline-on-migrate: true
+  rabbitmq:
+    host: localhost
+    queue: message_service
+keycloak:
+  auth-server-url: http://localhost:8484/auth
+  realm: catalog-realm
+  resource: message-service
+  public-client: true
